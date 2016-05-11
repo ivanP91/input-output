@@ -7,7 +7,7 @@ import java.io.IOException;
  */
 public class Demo {
   public static void main(String[] args) throws IOException {
-    ReadeConsole readeConsole = new ReadeConsole();
+    Writer readeConsole = new Writer();
     System.out.println(readeConsole.readeString());
     System.out.println(readeConsole.readInt());
     System.out.println(readeConsole.readChar());
