@@ -24,7 +24,7 @@ public class InputOutputFile {
       do {
         line = input.readLine();
         output.write(line);
-       // output.newLine();
+       output.newLine();
       } while (!line.equals("."));
     } catch (IOException e) {
       e.printStackTrace();
