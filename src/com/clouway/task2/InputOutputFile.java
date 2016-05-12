@@ -14,5 +14,8 @@ public class InputOutputFile {
   public InputOutputFile(String name) {
     file = name;
   }
-
+public void writeFile () throws IOException{
+  BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+  BufferedWriter out=new BufferedWriter(new )
+}
 }
