@@ -6,28 +6,31 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by clouway on 12.05.16.
- */
+
 public class InputOutputFile {
   public String file;
 
   public InputOutputFile(String name) {
+
     file = name;
   }
 
   public void writeFile() throws IOException {
-    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    BufferedWriter out = new BufferedWriter(new FileWriter(file));
+    BufferedWriter output = new BufferedWriter(new FileWriter(file));
+    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     String line;
+
     try {
       do {
-        line = in.readLine();
-        in.readLine();
-        out.newLine();
-      } while (!line.equalsIgnoreCase("."));
-    }catch (IOException io){
-      io.printStackTrace();
+        line = input.readLine();
+        output.write(line);
+       // output.newLine();
+      } while (!line.equals("."));
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      output.close();
+      input.close();
     }
   }
 }
