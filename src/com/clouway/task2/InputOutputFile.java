@@ -11,11 +11,23 @@ import java.io.InputStreamReader;
  */
 public class InputOutputFile {
   public String file;
+
   public InputOutputFile(String name) {
     file = name;
   }
-public void writeFile () throws IOException{
-  BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
-  BufferedWriter out=new BufferedWriter(new )
-}
+
+  public void writeFile() throws IOException {
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter out = new BufferedWriter(new FileWriter(file));
+    String line;
+    try {
+      do {
+        line = in.readLine();
+        in.readLine();
+        out.newLine();
+      } while (!line.equalsIgnoreCase("."));
+    }catch (IOException io){
+      io.printStackTrace();
+    }
+  }
 }
