@@ -8,10 +8,10 @@ import java.util.Scanner;
  */
 public class Demo {
   public static void main(String[] args) throws IOException {
-    System.out.println("name file: ");
+    System.out.print("name file:");
     Scanner sc = new Scanner(System.in);
     String name = sc.nextLine();
-    InputOutputFile test = new InputOutputFile(name);
+    File test = new File(name);
     System.out.println("Write to file.");
     test.writeFile();
   }
