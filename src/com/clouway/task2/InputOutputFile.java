@@ -9,28 +9,24 @@ import java.io.InputStreamReader;
 
 public class InputOutputFile {
   public String file;
-
   public InputOutputFile(String name) {
-
     file = name;
   }
-
   public void writeFile() throws IOException {
-    BufferedWriter output = new BufferedWriter(new FileWriter(file));
-    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter out = new BufferedWriter(new FileWriter(file));
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
     String line;
-
     try {
       do {
-        line = input.readLine();
-        output.write(line);
-       output.newLine();
+        line = in.readLine();
+        out.write(line);
+        out.newLine();
       } while (!line.equals("."));
-    } catch (IOException e) {
-      e.printStackTrace();
+    } catch (IOException io) {
+      io.printStackTrace();
     } finally {
-      output.close();
-      input.close();
+      out.close();
+      in.close();
     }
   }
 }
