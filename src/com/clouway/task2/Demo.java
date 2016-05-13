@@ -8,12 +8,14 @@ import java.util.Scanner;
  */
 public class Demo {
   public static void main(String[] args) throws IOException {
+    File test = new File();
     System.out.print("name file:");
     Scanner sc = new Scanner(System.in);
     String name = sc.nextLine();
-    File test = new File(name);
+    System.out.println("Enter Stopsymbol for writing:");
+    String stopsymbol =sc.nextLine();
     System.out.println("Write to file.");
-    test.writeFile();
+    test.write(stopsymbol, name);
   }
 }
 
