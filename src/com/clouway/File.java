@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-public class ReverseFile {
+public class File {
   private String file;
   private String breakCharacter;
 
-  public ReverseFile(String file, String breakCharacter) {
+  public File(String file, String breakCharacter) {
     this.breakCharacter=breakCharacter;
     this.file=file;
   }
@@ -33,9 +33,9 @@ public class ReverseFile {
       in.close();
     }
   }
-  public void reverse(String reverseFile) throws IOException {
+  public void reverse(String toFile) throws IOException {
     BufferedReader input = new BufferedReader(new FileReader(file));
-    BufferedWriter output = new BufferedWriter(new FileWriter(reverseFile));
+    BufferedWriter output = new BufferedWriter(new FileWriter(toFile));
     String line;
     try {
       do {

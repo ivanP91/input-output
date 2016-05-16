@@ -11,7 +11,7 @@ public class Demo {
     System.out.print("Enter breaker character ");
     String breaker = sc.nextLine();
     System.out.println("Write to file: ");
-    ReverseFile test = new ReverseFile(name, breaker);
+    File test = new File(name, breaker);
     test.write();
     System.out.println("content will be reversed in reversedfile.txt");
     test.reverse("reversedfile.txt");
